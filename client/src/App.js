@@ -11,6 +11,8 @@ import './App.css';
 import Menu from "./components/Menu";
 import TopNavBar from "./components/TopNavBar";
 
+import './state.js';
+
 function App() {
   return (
     <RecoilRoot>
