@@ -10,8 +10,16 @@ import './App.css';
 
 import Menu from "./components/Menu";
 import TopNavBar from "./components/TopNavBar";
+import Search from "./components/Search";
 
 import './state.js';
+
+function MainThing() {
+    if (true) { //TODO: update conditionoal with recoil value later
+        return <Menu />;
+    }
+    return <Search />;
+}
 
 function App() {
   return (
@@ -19,7 +27,7 @@ function App() {
         <Fragment>
             <div className="container">
                 <TopNavBar />
-                <Menu />
+                <MainThing />
             </div>
         </Fragment>
     </RecoilRoot>

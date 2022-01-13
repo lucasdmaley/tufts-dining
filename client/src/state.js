@@ -3,9 +3,10 @@
 
 import { atom, selector } from 'recoil';
 
-const customizationState = atom({
+export const customizationState = atom({
     key: 'customizationState',
     default: {
+        time_period: 'Breakfast',
         downhill: false,
         uphill: false,
         mealplan: false,
@@ -21,7 +22,7 @@ const customizationState = atom({
     }
 });
 
-const getBitpackedCustomizationState = selector({
+export const getBitpackedCustomizationState = selector({
     key: 'getBitpackedCustomizationState',
     get: ({get}) => {
         const customization = get(customizationState);
@@ -40,5 +41,12 @@ const getBitpackedCustomizationState = selector({
         customization.allergen_free ? id += '1' : id += '0';
         console.log("created id: " + id);
         return id;
+    }
+});
+
+export const getTimePeriod = selector({
+    key: 'getTimePeriod',
+    get: ({get}) => {
+        return get(customizationState).time_period;
     }
 });

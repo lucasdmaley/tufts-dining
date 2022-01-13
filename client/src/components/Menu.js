@@ -1,17 +1,28 @@
 import React, { Fragment, useEffect, useState } from "react";
+import {
+  //RecoilRoot,
+  //atom,
+  //selector,
+  //useRecoilState,
+  useRecoilValue,
+} from 'recoil'
+import { customizationState, getBitpackedCustomizationState } from "../state.js";
+
 import "./Menu.css";
 
 const Menu = () => {
     
     const [ dishes, setDishes ] = useState([]);
+    const id = useRecoilValue(getBitpackedCustomizationState);
+    console.log(id);
     
     const getDishes = async () => {
         try {
-            const response = await fetch("http://localhost:5000/dishes");
+            const response = await fetch("http://localhost:5000/dishes/" + id);
             const jsonData = await response.json();
             
             setDishes(jsonData);
-            filterDishes();
+            //filterDishes();
         } catch (err) {
             console.error(err.message);
         }
