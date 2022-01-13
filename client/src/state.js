@@ -6,7 +6,7 @@ import { atom, selector } from 'recoil';
 export const customizationState = atom({
     key: 'customizationState',
     default: {
-        time_period: 'Breakfast',
+        meal_time: 'Breakfast',
         downhill: false,
         uphill: false,
         mealplan: false,
@@ -47,6 +47,6 @@ export const getBitpackedCustomizationState = selector({
 export const getTimePeriod = selector({
     key: 'getTimePeriod',
     get: ({get}) => {
-        return get(customizationState).time_period;
+        return get(customizationState).meal_time;
     }
 });

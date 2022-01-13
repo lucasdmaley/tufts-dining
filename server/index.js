@@ -25,7 +25,7 @@ app.get("/dishes/:id", async (req, res) => {
     try {
         const { id } = req.params;
         const length = req.params.id.length;
-        console.log(id[0]);
+        //console.log(id[0]);
         if (length == 12) {
             // if (id[0] === "0") {
             //     console.log(id[0] + " == true");
@@ -50,7 +50,7 @@ app.get("/dishes/:id", async (req, res) => {
 
 //note, only chooses lunch times rn
 function make_query(id) {
-    let query = `SELECT * FROM dishes WHERE meal_time = 'Breakfast'`;
+    let query = `SELECT * FROM dishes WHERE id > 1`;
     if (id[0] === "1") query += ` AND dining_hall IN ('Dewick', 'Commons', 'Hodg', 'Pax', 'Kindlevan')`; //Downhill
     if (id[1] === "1") query += ` AND dining_hall IN ('Carm', 'Mugar', 'Tower Cafe')`; //Uphill 
     if (id[2] === "1" && id[3] !== "1") query += ` AND dining_hall IN ('Carm', 'Dewick', 'Kindlevan')`; //Mealplan, no JumboCash (TODO: needs testing!)

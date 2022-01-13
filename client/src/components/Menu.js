@@ -6,15 +6,29 @@ import {
   //useRecoilState,
   useRecoilValue,
 } from 'recoil'
-import { customizationState, getBitpackedCustomizationState } from "../state.js";
+import { customizationState, getBitpackedCustomizationState, 
+         getTimePeriod } from "../state.js";
 
 import "./Menu.css";
+
+const DiningHallItems = (props) => {
+    const dishes = props.dishes;
+    const meal_time = useRecoilValue(getTimePeriod);
+
+    return (
+        <div className="DiningHall">
+            <h3>{props.diningHall}</h3>
+            {dishes.filter(dish => dish.dining_hall === props.diningHall && dish.meal_time === meal_time).map(hallDishes => (
+                <p key={hallDishes.id} className="dish">{hallDishes.name}</p>
+            ))}
+        </div>
+    );
+}
 
 const Menu = () => {
     
     const [ dishes, setDishes ] = useState([]);
     const id = useRecoilValue(getBitpackedCustomizationState);
-    console.log(id);
     
     const getDishes = async () => {
         try {
@@ -43,24 +57,10 @@ const Menu = () => {
     return (
         <Fragment>
             <div className="Menu">
-                <div className="Dewick DiningHall">
-                    <h3>Dewick</h3>
-                    {dishes.filter(dish => dish.dining_hall === "Dewick").map(dewickDishes => (
-                        <p key={dewickDishes.id} className="dish">{dewickDishes.name}</p>
-                    ))}
-                </div>
-                <div className="Carm DiningHall">
-                    <h3>Carm</h3>
-                    {dishes.filter(dish => dish.dining_hall === "Carm").map(carmDishes => (
-                        <p key={carmDishes.id} className="dish">{carmDishes.name}</p>
-                    ))}
-                </div>
-                <div className="Kindlevan DiningHall">
-                    <h3>Kindlevan</h3>
-                    {dishes.filter(dish => dish.dining_hall === "Kindlevan").map(kindlevanDishes => (
-                        <p key={kindlevanDishes.id} className="dish">{kindlevanDishes.name}</p>
-                    ))}
-                </div>
+                <DiningHallItems diningHall="Mugar" dishes={dishes}/>
+                <DiningHallItems diningHall="Dewick" dishes={dishes}/>
+                <DiningHallItems diningHall="Carm" dishes={dishes}/>
+                <DiningHallItems diningHall="Kindlevan" dishes={dishes}/>
             </div>
         </Fragment>
     )
