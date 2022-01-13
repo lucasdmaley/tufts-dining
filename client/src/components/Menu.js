@@ -36,15 +36,6 @@ const Menu = () => {
             const jsonData = await response.json();
             
             setDishes(jsonData);
-            //filterDishes();
-        } catch (err) {
-            console.error(err.message);
-        }
-    }
-    
-    const filterDishes = async () => {
-        try {
-            //check state to see if filter options are used, filter
         } catch (err) {
             console.error(err.message);
         }
@@ -57,10 +48,10 @@ const Menu = () => {
     return (
         <Fragment>
             <div className="Menu">
-                <DiningHallItems diningHall="Mugar" dishes={dishes}/>
-                <DiningHallItems diningHall="Dewick" dishes={dishes}/>
-                <DiningHallItems diningHall="Carm" dishes={dishes}/>
-                <DiningHallItems diningHall="Kindlevan" dishes={dishes}/>
+                <DiningHallItems diningHall="Mugar" dishes={dishes} />
+                <DiningHallItems diningHall="Dewick" dishes={dishes} />
+                <DiningHallItems diningHall="Carm" dishes={dishes} />
+                <DiningHallItems diningHall="Kindlevan" dishes={dishes} />
             </div>
         </Fragment>
     )

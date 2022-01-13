@@ -15,7 +15,7 @@ import Search from "./components/Search";
 import './state.js';
 
 function MainThing() {
-    if (true) { //TODO: update conditionoal with recoil value later
+    if (false) { //TODO: update conditionoal with recoil value later
         return <Menu />;
     }
     return <Search />;
