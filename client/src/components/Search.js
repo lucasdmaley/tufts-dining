@@ -1,4 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { customizationState, getCustomizationState } from "../state.js";
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -12,13 +14,22 @@ import RadioGroup from '@mui/material/RadioGroup';
 import "./Search.css";
 
 const Search = () => {
+    const setCustomization = useSetRecoilState(customizationState);
+    const oldCustomizationState = useRecoilValue(getCustomizationState); //local customization state
     
     const handleDefaultChange = (event) => {
         console.log(event.target.value);
     };
     
     const handleCustomChange = (event) => {
-        console.log(event.target.value);
+        let newCustomizationState = {};
+        newCustomizationState[event.target.value] = ! oldCustomizationState[event.target.value];
+        for (const [key, value] of Object.entries(oldCustomizationState)) {
+            if (key != event.target.value)
+                newCustomizationState[key] = value;
+        }
+        
+        setCustomization(newCustomizationState);
     };
     
     return (

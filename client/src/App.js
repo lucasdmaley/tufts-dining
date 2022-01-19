@@ -1,21 +1,24 @@
 import React, { Fragment } from "react";
 import {
-  RecoilRoot //,
+  RecoilRoot,
   //atom,
   //selector,
   //useRecoilState,
-  //useRecoilValue,
+  useRecoilValue
 } from 'recoil'
 import './App.css';
 
 import Menu from "./components/Menu";
-import TopNavBar from "./components/TopNavBar";
 import Search from "./components/Search";
+import TopNavBar from "./components/TopNavBar";
+import BottomNavBar from "./components/BottomNavBar";
 
-import './state.js';
+import { getAppState } from "./state"
+
+//import './state.js';
 
 function MainThing() {
-    if (false) { //TODO: update conditionoal with recoil value later
+    if (useRecoilValue(getAppState).menu) { 
         return <Menu />;
     }
     return <Search />;
@@ -28,6 +31,7 @@ function App() {
             <div className="container">
                 <TopNavBar />
                 <MainThing />
+                <BottomNavBar />
             </div>
         </Fragment>
     </RecoilRoot>

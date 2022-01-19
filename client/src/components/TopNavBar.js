@@ -5,13 +5,23 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import { useSetRecoilState } from "recoil";
+import { appState } from "../state"
+
 import "./TopNavBar.css";
 
 export default function TopNavBar() {
   const [value, setValue] = React.useState(0);
+  const setAppState = useSetRecoilState(appState);
+  const tabs = ["Breakfast", "Lunch", "Dinner"];
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+      setAppState({ menu: true });
+      switch (newValue) {
+          case 0:
+              
+      }
+      setValue(newValue);
   };
 
   return (

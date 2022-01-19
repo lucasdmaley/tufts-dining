@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.BottomNavBar {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: black;
+    weight: 400;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    /*justify-content: space-around; */
+}
+
+.BottomBorder {
+    background-color: gray;
+    margin: 0px;
+    /* height: 1px; /* consider removing */
+}

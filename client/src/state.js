@@ -3,6 +3,20 @@
 
 import { atom, selector } from 'recoil';
 
+export const appState = atom({
+    key: 'appState',
+    default: {
+        menu: true
+    }
+});
+
+export const getAppState = selector({
+    key: 'getAppState',
+    get: ({get}) => {
+        return get(appState);
+    }
+})
+
 export const customizationState = atom({
     key: 'customizationState',
     default: {
@@ -19,6 +33,13 @@ export const customizationState = atom({
         milk_free: false,
         nut_free: false,
         allergen_free: false
+    }
+});
+
+export const getCustomizationState = selector({
+    key: 'getCustomizationState',
+    get: ({get}) => {
+        return get(customizationState);
     }
 });
 
