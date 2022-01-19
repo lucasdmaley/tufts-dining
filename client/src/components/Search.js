@@ -18,7 +18,14 @@ const Search = () => {
     const oldCustomizationState = useRecoilValue(getCustomizationState); //local customization state
     
     const handleDefaultChange = (event) => {
-        console.log(event.target.value);
+        let newCustomizationState = {};
+        let defaultKey = event.target.value.replace('_only', '');
+        newCustomizationState[defaultKey] = true;
+        for (const [key, value] of Object.entries(oldCustomizationState)) {
+            if (key != defaultKey)
+                newCustomizationState[key] = false;
+        }
+        setCustomization(newCustomizationState);
     };
     
     const handleCustomChange = (event) => {
@@ -35,6 +42,18 @@ const Search = () => {
     const ifChecked = (props) => {
         return oldCustomizationState[props];
     } 
+    
+    //ensures default value of radiogroup is accurate and responsive
+    const checkDefaultValue = () => {
+        let value = "";
+        if (oldCustomizationState.mealplan) value += "mealplan_only";
+        if (oldCustomizationState.favorites) value += "favorites_only";
+        if (oldCustomizationState.rare_finds) value += "rare_finds_only";
+        if (oldCustomizationState.downhill) value += "downhill_only";
+        if (oldCustomizationState.vegetarian) value += "vegetarian_only";
+        return value;
+    }
+    
     //TODO: switch out the bottom 6 form control labels with the top 6 form control label format
     
     return (
@@ -42,7 +61,7 @@ const Search = () => {
             <Grid container>
                 <Grid item xs={12}>
                     <h3>Recommended Defaults:</h3>
-                    <RadioGroup defaultValue="mealplan" onChange={handleDefaultChange}>
+                    <RadioGroup defaultValue={checkDefaultValue} onChange={handleDefaultChange}>
                         <FormControlLabel value="mealplan_only" control={<Radio />} label="Mealplan only" />
                         <FormControlLabel value="favorites_only" control={<Radio />} label="Favorites only" />
                         <FormControlLabel value="rare_finds_only" control={<Radio />} label="Rare finds only" />

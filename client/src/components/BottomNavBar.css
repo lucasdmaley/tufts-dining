@@ -6,13 +6,17 @@
     color: black;
     weight: 400;
     width: 100%;
+    /* height: 9vh; */
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     /*justify-content: space-around; */
 }
 
 .TopBorder {
     background-color: gray;
     margin: 0px;
-     height: 0px; /* consider removing */
+}
+
+#bottom .MuiTabs-indicator {
+    bottom: 7.8vh;
 }

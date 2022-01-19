@@ -23,7 +23,7 @@ export const customizationState = atom({
         meal_time: 'Breakfast',
         downhill: false,
         uphill: false,
-        mealplan: false,
+        mealplan: true,
         jumbocash: false,
         favorites: false,
         rare_finds: false,

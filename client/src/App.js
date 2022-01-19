@@ -12,6 +12,7 @@ import Menu from "./components/Menu";
 import Search from "./components/Search";
 import TopNavBar from "./components/TopNavBar";
 import BottomNavBar from "./components/BottomNavBar";
+import { StyledEngineProvider } from '@mui/material/styles';
 
 import { getAppState } from "./state"
 
@@ -24,17 +25,24 @@ function MainThing() {
     return <Search />;
 }
 
+function KeyConditional() {
+    return <div />
+}
+
 function App() {
   return (
-    <RecoilRoot>
-        <Fragment>
-            <div className="container">
-                <TopNavBar />
-                <MainThing />
-                <BottomNavBar />
-            </div>
-        </Fragment>
-    </RecoilRoot>
+    <StyledEngineProvider injectFirst>
+        <RecoilRoot>
+            <Fragment>
+                <div className="container">
+                    <TopNavBar />
+                    <MainThing />
+                    <KeyConditional />
+                    <BottomNavBar />
+                </div>
+            </Fragment>
+        </RecoilRoot>
+    </StyledEngineProvider>
   );
 }
 
