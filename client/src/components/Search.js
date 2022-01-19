@@ -32,6 +32,11 @@ const Search = () => {
         setCustomization(newCustomizationState);
     };
     
+    const ifChecked = (props) => {
+        return oldCustomizationState[props];
+    } 
+    //TODO: switch out the bottom 6 form control labels with the top 6 form control label format
+    
     return (
         <Box className="Search">
             <Grid container>
@@ -51,18 +56,37 @@ const Search = () => {
                 </Grid>
                 <Grid item xs={6}>
                     <FormGroup onChange={handleCustomChange}>
-                        <FormControlLabel value="downhill" control={<Switch />} label="Downhill" />
-                        <FormControlLabel value="mealplan" control={<Switch />} label="Mealplan" />
-                        <FormControlLabel value="favorites" control={<Switch />} label="Favorites" />
+                        <FormControlLabel 
+                            control={<Switch value="downhill" checked={ifChecked("downhill")} />  }
+                            label="Downhill" 
+                        />
+                        <FormControlLabel 
+                            control={<Switch value="mealplan" checked={ifChecked("mealplan")} />  }
+                            label="Mealplan" 
+                        />
+                        <FormControlLabel 
+                            control={<Switch value="favorites" checked={ifChecked("favorites")} />  }
+                            label="Favorites" 
+                        />
                     </FormGroup>
                 </Grid>
                 <Grid item xs={6}>
                     <FormGroup onChange={handleCustomChange}>
-                        <FormControlLabel value="uphill" control={<Switch />} label="Uphill" />
-                        <FormControlLabel value="jumbocash" control={<Switch />} label="JumboCash" />
-                        <FormControlLabel value="rare_finds" control={<Switch />} label="Rare finds" />
+                        <FormControlLabel 
+                            control={<Switch value="uphill" checked={ifChecked("uphill")} />  }
+                            label="Uphill" 
+                        />
+                        <FormControlLabel 
+                            control={<Switch value="jumbocash" checked={ifChecked("jumbocash")} />  }
+                            label="Jumbocash" 
+                        />
+                        <FormControlLabel 
+                            control={<Switch value="rare_finds" checked={ifChecked("rare_finds")} />  }
+                            label="Rare finds" 
+                        />
                     </FormGroup>
                 </Grid>
+                
                 
                 <Grid item xs={12}>
                     <h3>Sort by Allergen:</h3>

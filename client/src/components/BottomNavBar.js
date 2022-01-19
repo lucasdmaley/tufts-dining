@@ -21,13 +21,12 @@ export default function BottomNavBar() {
   };
 
   return (
-      <div>
-          <Box className="BottomNavBar" sx={{ width: '100%' }}>
-              <Tabs value={value} onChange={handleChange} sx={{'& .MuiTabs-flexContainer': {justifyContent: 'space-evenly', }, }}>
-                  <Tab label="Change Search Parameters" sx={{height: '8vh', fontSize: '15px', color: 'rgba(0, 0, 0, 1)'}}/>
-                  <Tab label="Key" sx={{height: '8vh', fontSize: '15px', color: 'rgba(0, 0, 0, 1)'}}/>
-              </Tabs>
-          </Box>
-      </div>
+    <Box className="BottomNavBar" sx={{ width: '100%' }}>
+      <hr className="TopBorder"/>
+      <Tabs value={value} onChange={handleChange} sx={{'& .MuiTabs-flexContainer': {justifyContent: 'space-evenly', }, }}>
+        <Tab label="Change Search Parameters" sx={{height: '8vh', fontSize: '15px', color: 'rgba(0, 0, 0, 1)'}}/>
+        <Tab label="Key" sx={{height: '8vh', fontSize: '15px', color: 'rgba(0, 0, 0, 1)'}}/>
+      </Tabs>
+    </Box>
   );
 }

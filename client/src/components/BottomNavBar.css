@@ -11,8 +11,8 @@
     /*justify-content: space-around; */
 }
 
-.BottomBorder {
+.TopBorder {
     background-color: gray;
     margin: 0px;
-    /* height: 1px; /* consider removing */
+     height: 0px; /* consider removing */
 }
