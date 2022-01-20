@@ -15,7 +15,7 @@ import BottomNavBar from "./components/BottomNavBar";
 import Key from "./components/Key";
 import { StyledEngineProvider } from '@mui/material/styles';
 
-import { getAppState } from "./state"
+import { getAppState, getKeyState } from "./state"
 
 //import './state.js';
 
@@ -28,7 +28,9 @@ function MainThing() {
 
 //TODO: actually make this a conditional
 function KeyConditional() {
-    return <Key />
+    if (useRecoilValue(getKeyState).key)
+        return <Key />
+    return <div />
 }
 
 function App() {

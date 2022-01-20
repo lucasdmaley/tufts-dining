@@ -17,6 +17,20 @@ export const getAppState = selector({
     }
 })
 
+export const keyState = atom({
+    key: 'keyState',
+    default: {
+        key: false
+    }
+})
+
+export const getKeyState = selector({
+    key: 'getKeyState',
+    get: ({get}) => {
+        return get(keyState);
+    }
+})
+
 export const customizationState = atom({
     key: 'customizationState',
     default: {
