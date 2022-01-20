@@ -54,6 +54,7 @@ const Search = () => {
         return value;
     }
     
+    //TODO: ensure default is reflected by changes in full customization
     //TODO: switch out the bottom 6 form control labels with the top 6 form control label format
     
     return (

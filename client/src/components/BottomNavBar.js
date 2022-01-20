@@ -22,6 +22,7 @@ const BottomNavBar = () => {
     setValue(newValue)
   };
   
+  //NB: doesn't work! registers previos value of nav bar
   const handleClick = () => {
       if (value == 1) {
           console.log("clicked key!");

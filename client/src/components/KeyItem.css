@@ -1,0 +1,21 @@
+.Circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 25px;
+    /* background-color: green; */
+}
+
+.LightGreen { background-color: #45D742; }
+.Red { background-color: #E24421; }
+.Green { background-color: #099B06; }
+.Blue { background-color: #296FD9; }
+.LightBrown { background-color: #EDB423; }
+.Brown { background-color: #BB7813; }
+.Gold { background-color: #FFE605; }
+.Pink { background-color: #FC74FF}
+
+#KeyItem {
+    height: 50px;
+    position: relative;
+    bottom: 20px;
+}

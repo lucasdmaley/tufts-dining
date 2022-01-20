@@ -1,0 +1,20 @@
+.Key {
+    background-color: white;
+    width: 100vw;
+    position: fixed;
+    bottom: 8vh;
+}
+
+.TopBorder {
+    background-color: gray;
+    margin: 0px;
+}
+
+.Items {
+    padding-left: 5vw;
+    width: 100vw;
+}
+
+.Allergens {
+    padding-left: 8vw;
+}

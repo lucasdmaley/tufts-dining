@@ -12,6 +12,7 @@ import Menu from "./components/Menu";
 import Search from "./components/Search";
 import TopNavBar from "./components/TopNavBar";
 import BottomNavBar from "./components/BottomNavBar";
+import Key from "./components/Key";
 import { StyledEngineProvider } from '@mui/material/styles';
 
 import { getAppState } from "./state"
@@ -25,8 +26,9 @@ function MainThing() {
     return <Search />;
 }
 
+//TODO: actually make this a conditional
 function KeyConditional() {
-    return <div />
+    return <Key />
 }
 
 function App() {
