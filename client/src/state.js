@@ -20,7 +20,7 @@ export const getAppState = selector({
 export const keyState = atom({
     key: 'keyState',
     default: {
-        key: false
+        key: true
     }
 })
 

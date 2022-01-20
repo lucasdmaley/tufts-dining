@@ -14,13 +14,13 @@ const Key = () => {
                     <h3>Key</h3>
                 </Grid>
                 <Grid item xs={5} className="Allergens" justifyContent="flex-start">
-                    <KeyItem value="Favorite" color="Pink"/>
+                    <KeyItem value="Favorite" color="Pink" icon="heart"/>
                     <KeyItem value="Vegetarian" color="LightGreen"/>
                     <KeyItem value="Gluten free" color="LightBrown"/>
                     <KeyItem value="Nut free" color="Brown"/>
                 </Grid>
                 <Grid item xs={6} className="Allergens">
-                    <KeyItem value="Rare finds" color="Gold"/>
+                    <KeyItem value="Rare finds" color="Gold" icon="star"/>
                     <KeyItem value="Vegan" color="Green"/>
                     <KeyItem value="Milk free" color="Blue"/>
                     <KeyItem value="Allergen free (all 9)" color="Red"/>

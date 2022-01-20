@@ -5,14 +5,33 @@
     /* background-color: green; */
 }
 
+/* Circle Colors */
 .LightGreen { background-color: #45D742; }
 .Red { background-color: #E24421; }
 .Green { background-color: #099B06; }
 .Blue { background-color: #296FD9; }
 .LightBrown { background-color: #EDB423; }
 .Brown { background-color: #BB7813; }
-.Gold { background-color: #FFE605; }
-.Pink { background-color: #FC74FF}
+
+/* Icon Colors / sizing */
+.Gold { 
+    color: #FFE605;
+    font-size: 20;
+    position: relative;
+    right: 5px;
+    top: 2px;
+}
+.Pink {  
+    color: #FC74FF;
+    position: relative;
+    right: 5px;
+    top: 1px;
+}
+
+.IconShift {
+    position: relative;
+    right: 9px;
+}
 
 #KeyItem {
     height: 50px;
