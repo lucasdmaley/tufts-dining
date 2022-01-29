@@ -8,24 +8,36 @@ import Tab from '@mui/material/Tab';
 import "./BottomNavBar.css";
 
 import { useSetRecoilState, useRecoilValue } from "recoil";
-import { appState, getAppState } from "../state.js"
+import { appState, getAppState, keyState, getKeyState } from "../state.js"
 
 const BottomNavBar = () => {
   const [value, setValue] = React.useState(0);
   const setAppState = useSetRecoilState(appState);
+  const setKeyState = useSetRecoilState(keyState);
   const currAppState = useRecoilValue(getAppState);
+  const currKeyState = useRecoilValue(getKeyState);
 
   const handleChange = (event, newValue) => {
     console.log("handling bottom nav");
-    setAppState({ menu: false });
+    if (newValue == 1) {
+        setKeyState({ key: true })
+    } else {
+        setAppState({ menu: false });
+        setKeyState({ key: false }) //TODO: remove blue bar when key set to false
+    }
     console.log(currAppState);
     setValue(newValue)
   };
   
-  //NB: doesn't work! registers previos value of nav bar
+  //NB: doesn't work! if previous value was key, currStateKey.key is false, and 'change search params' is clicked, key becomes visible
   const handleClick = () => {
-      if (value == 1) {
-          console.log("clicked key!");
+      //if the previous click was on the key
+      if (currKeyState.key) {
+          setKeyState({ key: false }); //TODO: remove blue bar when key set to false
+      }
+      //makes key visible if not already and 'key' button clicked
+      if (value == 1 && !currKeyState.key) {
+          setKeyState({ key: true });
       }
   }
   

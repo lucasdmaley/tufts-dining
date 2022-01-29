@@ -6,7 +6,8 @@ import { atom, selector } from 'recoil';
 export const appState = atom({
     key: 'appState',
     default: {
-        menu: true
+        menu: true //,
+        // navUpdated: false
     }
 });
 
@@ -20,7 +21,7 @@ export const getAppState = selector({
 export const keyState = atom({
     key: 'keyState',
     default: {
-        key: true
+        key: false
     }
 })
 

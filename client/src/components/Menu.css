@@ -16,3 +16,14 @@
     width: 82vw;
     color: black;
 }
+
+.SearchWarning {
+    color: #c71818;
+}
+
+.Credits {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 2.5vh;
+}
